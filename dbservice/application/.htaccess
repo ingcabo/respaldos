@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+        RewriteEngine on
+        RewriteCond $1 !^(index.php|css|js|images)
+        RewriteRule ^(.*)$ index.php/$1 [L]
+
+        Header add Access-Control-Allow-Origin "*"
+        Header add Access-Control-Allow-Headers "origin, x-requested-with, content-type"
+        Header add Access-Control-Allow-Methods "get, PUT, POST, DELETE, OPTIONS"
+        header add Access-Control-Request-Headers "key"
+</IfModule>
